@@ -1,0 +1,1015 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>LikEat</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  {% block css %}
+    
+  <!-- Favicons -->
+  <link href="{% static 'pagprincipal/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'pagprincipal/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'pagprincipal/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'pagprincipal/lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pagprincipal/lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pagprincipal/lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pagprincipal/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pagprincipal/lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'pagprincipal/css/style.css' %}" rel="stylesheet">
+
+  {% endblock css %}
+
+  <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  {% block header %}
+    
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#intro" class="scrollto">LikEat</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a> -->
+                
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="/#about">Nosotros</a></li>
+          <li><a href="/#portfolio">Ordena almuerzo</a></li>
+          <li><a href="/#services">Encarga especial</a></li>
+          <li><a href="/#contact">Contacto</a></li>
+          <li class="menu-has-children"><a href="">Planes</a>
+            <ul>
+              <li><a href="#">Plan personal</a></li>
+              <li><a href="#">Plan corporativo</a></li>
+              <li><a href="#">Referidos</a></li>
+              <!--<li><a href="#">Drop Down 5</a></li>-->
+            </ul>
+          </li>
+          <li class="menu-has-children"><a href="#"><span class="fa fa-user"></span>  login </a><span><br><a id="usuario-logeado" href="">{{ user.get_username }}</a></span>
+            <ul>
+              <li><a href="{% url 'login' %}">Ingresar</a></li>
+              <li><a href="{% url 'registrar' %}">Registrarse</a></li>
+              <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+              <!--<li><a href="#">Drop Down 5</a></li>-->
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  {% endblock header %}
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  {% block intro %}
+    
+  <section id="intro">
+    <div class="intro-container">
+
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+        
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+           
+          <div class="carousel-item active">
+
+            <div class="carousel-background"><img src="{% static 'pagprincipal/img/intro-carousel/1.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Ordena tu almuerzo a tu gusto y cantidad</h2>
+                <!--<p>a tu gusto y cantidad. Te lo haremos llegar en 90 minutos</p>-->
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="{% static 'pagprincipal/img/intro-carousel/2.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Encarga un plato especial con 24 horas de anticipacion</h2>
+                <!--<p>con 24 horas de anticipación, disfrutarás una de nuestras variadas delicias típicas</p>-->
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="{% static 'pagprincipal/img/intro-carousel/3.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>En tu Plan personal puedes seguir la dieta que deseas</h2>
+                <!--<p>Beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>-->
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="{% static 'pagprincipal/img/intro-carousel/4.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>En Plan corporativo puedes pagar a fin de mes</h2>
+                <!--<p>Neque porro quisquam est, qui dolorem ipsum quia dolo.</p>-->
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="{% static 'pagprincipal/img/intro-carousel/5.jpeg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Magnam aliquam quaerat</h2>
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, .</p>-->
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- #intro -->
+
+  {% endblock intro %}
+
+
+  <main id="main">
+
+    <!--{#-==========================
+      Servicios destacados Section
+    ============================#}!-->  
+
+  {% block registro %}
+     
+  {% endblock registro %} 
+
+
+  {% block contenido %}
+
+    <section id="featured-services">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 box">
+            <i class="ion-ios-bookmarks-outline"></i>
+            <h4 class="title"><a href="">Armas tu almuerzo</a></h4>
+            <p class="description">Tu escoges cada ingrediente, la forma de preparación y las cantidades</p>
+          </div>
+
+          <div class="col-lg-4 box box-bg">
+            <i class="ion-ios-stopwatch-outline"></i>
+            <h4 class="title"><a href="">Cuentas con nosotros</a></h4>
+            <p class="description">Acordamos contigo el lugar y hora de entrega, y te cumplimos... te llega a la hora que lo pediste y como lo pediste</p>
+          </div>
+
+          <div class="col-lg-4 box">
+            <i class="ion-ios-heart-outline"></i>
+            <h4 class="title"><a href="">Decides tu dieta</a></h4>
+            <p class="description">Selecciona o define la dieta que quieres seguir, elabora tu calendario personal de alimentos y solo nos confirmas con un click para que te despachemos</p>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- #featured-services -->
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+
+        <header class="section-header blanco">
+          <h3>Sobre Nosotros</h3>          
+        </header>
+
+        <div class="row about-cols">
+
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+                <img src="{% static 'pagprincipal/img/about-mission.jpg' %}" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Nuestra Misión</a></h2>
+              <p>
+                Transformamos la rutina diaria de almorzar en la oficina, en un deleite y satisfacción, a un costo razonable, por medio de nuestro innovador concepto: buffet gourmet a domicilio. <br><br><br><br>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="about-col">
+              <div class="img">
+                <img src="{% static 'pagprincipal/img/about-plan.jpg' %}" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-list-outline"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Nuestra estrategia</a></h2>
+              <p>
+                No invertir en costosas instalaciones de restaruantes abiertos al público, nos permite concentrar nuestros costos exclusivamente en el producto. Es así como podemos ofrecerte, a un precio razonable, los ingredientes más selectos y sanos, la posibilidad de elegir tus ingredientes y preparaciones favoritas y una logística de entrega ágil y efectiva.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="about-col">
+              <div class="img">
+                <img src="{% static 'pagprincipal/img/about-vision.jpg' %}" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Nuestra Visión</a></h2>
+              <p>
+                En 2019 cubriremos toda la ciudad de Bogotá, a través de 4 restaurantes en sitios estratégicos que nos permitirán estar más cerca de todos nuestros clientes, y seremos reconocidos como la mejor opción para almorzar en la oficina (después de mamá, cuando ella misma les empaca).
+              </p><br>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Portfolio Section
+    ============================-->
+    <section id="portfolio"  class="section-bg" >
+      <div class="container">
+
+        <header class="section-header">
+          <h3 class="section-title">Ordena tu almuerzo</h3>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <!--<li data-filter="*" class="filter-active">Todo</li>-->
+              <li data-filter=".filter-app">Carnes</li>
+              <li data-filter=".filter-card">Verduras</li>
+              <li data-filter=".filter-web">Carbohidratos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/carnes_res.jpg' %}" class="img-fluid" alt="">
+
+                <a href="{% static 'pagprincipal/img/portfolio/carnes_res.jpg' %}" data-lightbox="portfolio-1" data-title="Carnes de res" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                <div id="subMenuImg">
+                  <a href="{% static 'pagprincipal/img/portfolio/carnes_res_molida.jpg' %}" data-lightbox="portfolio-1"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/carnes_res_lomo.jpg' %}" data-lightbox="portfolio-1"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/carnes_res_sobrebarriga.jpg' %}" data-lightbox="portfolio-1"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/carnes_res_churrasco.jpg' %}" data-lightbox="portfolio-1"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/carnes_res_cadera.jpg' %}" data-lightbox="portfolio-1"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/carnes_res_higado.jpg' %}" data-lightbox="portfolio-1"></a>
+                </div>
+
+              </figure>
+
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Carnes de res</a></h4> <!~~app 1~~>
+                <!~~<p>App</p>~~>
+              </div>-->
+
+              <!--<a href="images/imagen-1.jpg" rel="lightbox[galeria1]">imagen #1</a>-->
+
+              <!--<a href="images/image-1.jpg" rel="lightbox" title="Título de la imagen 1"><img src="images/imagen_pequena1.jpg" /></a>-->
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/carnes_pollo.jpg' %}" class="img-fluid" alt="">
+                <a href="{% static 'pagprincipal/img/portfolio/carnes_pollo.jpg' %}" class="link-preview" data-lightbox="portfolio-2" data-title="Pollo campesino" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+                <div id="subMenuImg">
+                  <a href="{% static 'pagprincipal/img/portfolio/pollo_pechuga.png' %}" data-lightbox="portfolio-2"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/carne_lomo.png' %}" data-lightbox="portfolio-2"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/pollo_muslo.png' %}" data-lightbox="portfolio-2"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/pollo_ala.png' %}" data-lightbox="portfolio-2"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/pollo_desmechado.png' %}" data-lightbox="portfolio-2"></a>
+                </div>
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Carnes de pollo</a></h4> <!~~app 2~~>
+                <!~~<p>App</p>~~>
+              </div>-->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/carnes_cerdo.jpg' %}" class="img-fluid" alt="">
+                <a href="{% static 'pagprincipal/img/portfolio/carnes_cerdo.jpg' %}" class="link-preview" data-lightbox="portfolio-3" data-title="Carnes de cerdo" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+                <div id="subMenuImg">
+                  <a href="{% static 'pagprincipal/img/portfolio/cerdo_costilla.png' %}" data-lightbox="portfolio-3"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/cerdo_lomo.png' %}" data-lightbox="portfolio-3"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/cerdo_pierna.png' %}" data-lightbox="portfolio-3"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/cerdo_chuleta.png' %}" data-lightbox="portfolio-3"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/carne_tocino.png' %}" data-lightbox="portfolio-3"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/carne_tocineta.png' %}" data-lightbox="portfolio-3"></a>
+                </div>
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Carnes de cerdo</a></h4> <!~~App 3~~>
+                <!~~<p>App</p>~~>
+              </div>-->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/carnes_pescado.jpg' %}" class="img-fluid" alt="">
+                <a href="{% static 'pagprincipal/img/portfolio/carnes_pescado.jpg' %}" class="link-preview" data-lightbox="portfolio-4" data-title="Carnes de pescado" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+                <div id="subMenuImg">
+                  <a href="{% static 'pagprincipal/img/portfolio/pescado_mojarraRoja.png' %}" data-lightbox="portfolio-4"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/pescado_mojarraNegra.png' %}" data-lightbox="portfolio-4"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/pescado_fileteMojarra.png' %}" data-lightbox="portfolio-4"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/pescado_bagre.png' %}" data-lightbox="portfolio-4"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/carne_atun.png' %}" data-lightbox="portfolio-4"></a>
+                </div>
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Carnes de pescado</a></h4> 
+                <p>App</p>
+              </div>
+            </div>-->
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/carnes_mar.jpg' %}" class="img-fluid" alt="">
+                <a href="{% static 'pagprincipal/img/portfolio/carnes_mar.jpg' %}" class="link-preview" data-lightbox="portfolio'5" data-title="Carnes de mar" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+                <div id="subMenuImg">
+                  <a href="{% static 'pagprincipal/img/portfolio/mar_mojarra.png' %}" data-lightbox="portfolio-5"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/mar_pargo.png' %}" data-lightbox="portfolio-5"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/mar_robalo.png' %}" data-lightbox="portfolio-5"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/mar_camarones.png' %}" data-lightbox="portfolio-5"></a>
+                  <a href="{% static 'pagprincipal/img/portfolio/mar_mariscos.png' %}" data-lightbox="portfolio-5"></a>
+                </div>
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Mariscos</a></h4> <!~~App 4~~>
+                <!~~<p>App</p>~~>
+              </div>-->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/web3.jpg' %}" class="img-fluid" alt="">
+                <a href="{% static 'pagprincipal/img/portfolio/web3.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Web 3</a></h4>
+                <p>Web</p>
+              </div>-->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/card2.jpg' %}" class="img-fluid" alt="">
+                <a href="{% static 'pagprincipal/img/portfolio/card2.jpg' %" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Card 2</a></h4>
+                <p>Card</p>
+              </div>-->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/web2.jpg' %}" class="img-fluid" alt="">
+                <a href="{% static 'pagprincipal/img/portfolio/web2.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Web 2</a></h4>
+                <p>Web</p>
+              </div>-->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/card1.jpg' %}" class="img-fluid" alt="">
+                <a href="{% static 'pagprincipal/img/portfolio/card1.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Card 1</a></h4>
+                <p>Card</p>
+              </div>-->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/card3.jpg' %}" class="img-fluid" alt="">
+                <a href="{% static 'pagprincipal/img/portfolio/card3.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Card 3</a></h4>
+                <p>Card</p>
+              </div>-->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{% static 'pagprincipal/img/portfolio/web1.jpg' %}" class="img-fluid" alt="">
+                <a href="{% static 'pagprincipal/img/portfolio/web1.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <!--<div class="portfolio-info">
+                <h4><a href="#">Web 1</a></h4>
+                <p>Web</p>
+              </div>-->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #portfolio -->
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Services</h3>
+          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
+            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
+            <h4 class="title"><a href="">Dolor Sitema</a></h4>
+            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-paper-outline"></i></div>
+            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+            <h4 class="title"><a href="">Magni Dolores</a></h4>
+            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-barcode-outline"></i></div>
+            <h4 class="title"><a href="">Nemo Enim</a></h4>
+            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-people-outline"></i></div>
+            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+      Call To Action Section
+    ============================-->
+    <section id="call-to-action" class="wow fadeIn">
+      <div class="container text-center">
+        <h3>Call To Action</h3>
+        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a class="cta-btn" href="#">Call To Action</a>
+      </div>
+    </section><!-- #call-to-action -->
+
+    <!--==========================
+      Skills Section
+    ============================-->
+    <section id="skills">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Our Skills</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+        </header>
+
+        <div class="skills-content">
+
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">HTML <i class="val">100%</i></span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">CSS <i class="val">90%</i></span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">JavaScript <i class="val">75%</i></span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">Photoshop <i class="val">55%</i></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Facts</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </header>
+
+        <div class="row counters">
+
+  				<div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">274</span>
+            <p>Clients</p>
+  				</div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">421</span>
+            <p>Projects</p>
+  				</div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">1,364</span>
+            <p>Hours Of Support</p>
+  				</div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">18</span>
+            <p>Hard Workers</p>
+  				</div>
+
+  			</div>
+
+        <div class="facts-img">
+          <img src="{% static 'pagprincipal/img/facts-img.png' %}" alt="" class="img-fluid">
+        </div>
+
+      </div>
+    </section><!-- #facts -->
+
+
+    <!--==========================
+      Clients Section
+    ============================-->
+    <section id="clients" class="wow fadeInUp">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Our Clients</h3>
+        </header>
+
+        <div class="owl-carousel clients-carousel">
+          <img src="{% static 'pagprincipal/img/clients/client-1.png' %}" alt="">
+          <img src="{% static 'pagprincipal/img/clients/client-2.png' %}" alt="">
+          <img src="{% static 'pagprincipal/img/clients/client-3.png' %}" alt="">
+          <img src="{% static 'pagprincipal/img/clients/client-4.png' %}" alt="">
+          <img src="{% static 'pagprincipal/img/clients/client-5.png' %}" alt="">
+          <img src="{% static 'pagprincipal/img/clients/client-6.png' %}" alt="">
+          <img src="{% static 'pagprincipal/img/clients/client-7.png' %}" alt="">
+          <img src="{% static 'pagprincipal/img/clients/client-8.png' %}" alt="">
+        </div>
+
+      </div>
+    </section><!-- #clients -->
+
+    <!--==========================
+      Clients Section
+    ============================-->
+    <section id="testimonials" class="section-bg wow fadeInUp">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Testimonials</h3>
+        </header>
+
+        <div class="owl-carousel testimonials-carousel">
+
+          <div class="testimonial-item">
+            <img src="{% static 'pagprincipal/img/testimonial-1.jpg' %}" class="testimonial-img" alt="">
+"            <h4>Ceo &amp; Founder</h4>
+            <p>
+              <img src="{% static 'pagprincipal/img/quote-sign-left.png' %}" class="quote-sign-left" alt="">
+              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+              <img src="{% static 'pagprincipal/img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="{% static 'pagprincipal/img/testimonial-2.jpg' %}" class="testimonial-img" alt="">
+            <h3>Sara Wilsson</h3>
+            <h4>Designer</h4>
+            <p>
+              <img src="{% static 'pagprincipal/img/quote-sign-left.png' %}" class="quote-sign-left" alt="">
+              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+              <img src="{% static 'pagprincipal/img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="{% static 'pagprincipal/img/testimonial-3.jpg' %}" class="testimonial-img" alt="">
+            <h3>Jena Karlis</h3>
+            <h4>Store Owner</h4>
+            <p>
+              <img src="{% static 'pagprincipal/img/quote-sign-left.png' %}" class="quote-sign-left" alt="">
+              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+              <img src="{% static 'pagprincipal/img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="{% static 'pagprincipal/img/testimonial-4.jpg' %}" class="testimonial-img" alt="">
+            <h3>Matt Brandon</h3>
+            <h4>Freelancer</h4>
+            <p>
+              <img src="{% static 'pagprincipal/img/quote-sign-left.png' %}" class="quote-sign-left" alt="">
+              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+              <img src="{% static 'pagprincipal/img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="{% static 'pagprincipal/img/testimonial-5.jpg' %}" class="testimonial-img" alt="">
+            <h3>John Larson</h3>
+            <h4>Entrepreneur</h4>
+            <p>
+              <img src="{% static 'pagprincipal/img/quote-sign-left.png' %}" class="quote-sign-left" alt="">
+              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+              <img src="{% static 'pagprincipal/img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #testimonials -->
+
+    <!--==========================
+      Team Section -  LOGIN
+    ============================-->
+
+<!--    <section id="login" class="section-bg wow fadeInUp">
+      <div class="container">
+
+        <div class="section-header">
+          <h3>LOGIN</h3>
+          <p>Ingresa a tu cuenta si ya estás registrado como nuestro cliente</p>
+          <div id="registro-usuario">
+            <div class="ingresar">Ingresar</div>
+            <div class="olvide-password">Olvidé mi contraseña</div>
+            <div class="registrarme">Quiero registrarme</a></div>
+          </div>
+        </div>
+
+        <div class="form-login">
+          <!~~<div id="sendmessage">Your message has been sent. Thank you!</div>~~>
+          <div id="errormessage"></div>
+
+          <form action="" method="post" role="form" class="contactForm">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="username" class="form-control" id="name" placeholder="Ingresa tu usuario" data-rule="minlen:4" data-msg="Por favor ingresa al menos 4 caracteres" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" name="password" id="email" placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingresa al menos 4 caracteres" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="text-center"><button type="submit">Ingresar</button></div>
+          </form>
+        </div>
+
+        <div class="form-olvide-pass">
+          <form action="" method="post" role="form" class="contactForm">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="" id="id_email">Correo:</label>
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Enviar"></div>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-registrarme">
+          {# <div id="sendmessage">Su registro ha sido guardado exitosamente. Bienvenido!</div> #}
+          <div id="errormessage"></div>
+
+          <form action="" method="post" role="form" class="contactForm">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="">Nombre</label>
+                <input type="text" class="form-control" name="first_name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="">Apellidos</label>
+                <input type="text" class="form-control" name="last_name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="">Usuario</label>
+                <input type="text" class="form-control" name="username">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="">Email</label>
+                <input type="text" class="form-control" name="email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="">Contraseña</label>
+                <input type="text" class="form-control" name="password1">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="">Confirmar contraseña</label>
+                <input type="text" class="form-control" name="password2">
+              </div>
+
+            </div>
+            <div class="text-center"><button type="submit">Ingresar</button></div>
+
+          </form>
+        </div>
+      </div>
+    </section><!~~ #contact ~~>
+-->
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
+      <div class="container">
+
+        <div class="section-header">
+          <h3>Contáctanos</h3>
+          <p>Te responderemos en cuestión de minutos</p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>A108 Adam Street, NY 535022, USA</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+  
+{% endblock contenido %}
+
+  <!--==========================
+    Footer
+  ============================-->
+  
+  {% block footer %}
+    
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>LikEat</h3>
+            <p>Transformamos la rutina diaria de almorzar en la oficina, en un deleite y satisfacción, a un costo razonable, por medio de nuestro innovador concepto: buffet gourmet a domicilio.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Enlaces útiles</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Plan personal us</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Plan corporativo</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="/#portfolio">Ordena almuerzo</a></li>              
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contáctanos</h4>
+            <p>
+              Ciudad Sábana, conjunto Colibrí<br>
+              Mosquera, cundinamarca<br>
+              Colombia <br>
+              <strong>Tel:</strong> 319-667-6941<br>
+              <strong>Email:</strong> likeat@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Nuestro boletín</h4>
+            <p>Suscríbite si deseas recibir ofertas especiales, recetas, tips de cocina, entre otras</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>LikEat</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  {% endblock footer %}
+
+  {% block js %}
+    
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'pagprincipal/lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/superfish/hoverIntent.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/wow/wow.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/waypoints/waypoints.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/isotope/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/lightbox/js/lightbox.min.js' %}"></script>
+  <script src="{% static 'pagprincipal/lib/touchSwipe/jquery.touchSwipe.min.js' %}"></script>
+  <!-- Contact Form JavaScript File -->
+  <!--  <script src="{% static 'pagprincipal/contactform/contactform.js' %}"></script>-->
+  
+  <!-- Template Main Javascript File -->
+  <script src="{% static 'pagprincipal/js/main.js' %}"></script>
+
+  {% endblock js %}
+
+</body>
+</html>

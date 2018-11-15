@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+
+{% block intro %}	
+{% endblock intro %}
+
+{% block registro %}     
+
+<section id="contact">
+	<div class="form registro">
+		<div class="section-header">
+			<h3>REGISTRO DE USUARIO</h3>
+		</div>
+	  	<form action="" method="post" role="form" class="contactForm">
+			{% csrf_token %}
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<input type="text" name="username" class="form-control" id="name" placeholder="Nombre de usuario" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+					<div class="validation"></div>
+				</div>
+				<div class="form-group col-md-6">
+			    	<input type="email" class="form-control" name="email" id="email" placeholder="Su Email" data-rule="email" data-msg="Por favor ingrese un email válido" />
+			    	<div class="validation"></div>
+			  	</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<input type="text" name="first_name" class="form-control" id="name" placeholder="Su Nombre" data-rule="minlen:2" data-msg="Por favor ingrese su nombre" />
+					<div class="validation"></div>
+				</div>
+				<div class="form-group col-md-6">
+			    	<input type="text" class="form-control" name="last_name" id="last_name" placeholder="Su apellido" data-rule="minlen:2" data-msg="Por favor ingrese su apellido" />
+			    	<div class="validation"></div>
+			  	</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<input type="password" class="form-control" name="password1" id="password" placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingresa al menos 4 caracteres" />
+			            <div class="validation"></div>
+				</div>
+				<div class="form-group col-md-6">
+			    	<input type="password" class="form-control" name="password2" id="password" placeholder="Confirmar Contraseña" data-rule="minlen:4" data-msg="Por favor ingresa al menos 4 caracteres" />
+			        <div class="validation"></div>
+			  	</div>
+			</div>			
+			<div class="text-center"><button type="submit">Guardar</button></div>
+		</form>
+	</div>
+</section>
+
+{% endblock registro %} 
+
+
+{% block contenido %}	
+{% endblock contenido %}
+
+		

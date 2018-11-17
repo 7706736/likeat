@@ -1,7 +1,11 @@
 dj-database-url==0.5.0
 Django==2.1.2
 gunicorn==19.9.0
+<<<<<<< HEAD
 psycopg2==2.6.2
 pytz==2018.5
 virtualenv==16.0.0
+=======
+psycopg2==2.7.1
+>>>>>>> 4ea1b3a78e3b7291a5dbd5dc137c9c299754334f
 whitenoise==4.1.1

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import dj_database_url
 from django.urls import reverse_lazy
 
 
@@ -149,7 +150,6 @@ EMAIL_HOST_PASSWORD = 'Jehova.Dios'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 

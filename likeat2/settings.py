@@ -153,7 +153,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-# The absolute path to the directory where collectstatic will collect static files for deployment.
+#  La ruta de acceso absoluta al directorio donde collectstatic recopilará archivos estáticos para la implementación.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Simplified static file serving.
